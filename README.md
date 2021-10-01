@@ -20,17 +20,17 @@
 
 Agregue aquí al documentación del endpoint elaborado.
 
-* Url
+1. Url
 
-http://localhost:3000/api/
+* http://localhost:3000/api/
 
-* Datos de entrada
+2. Datos de entrada
 
-http://localhost:3000/api/<numero>
+* http://localhost:3000/api/<numero>
    
-*Ejmplo
+3. Ejemplo
    
-Petición: http://localhost:3000/api/170
+* Petición: http://localhost:3000/api/170
    
-Respuesta:
- [["Alexis Ajinca","Hamed Haddadi"],["Alexis Ajinca","Roy Hibbert"],["LaMarcus Aldridge","Zydrunas Ilgauskas"] ...
+* Respuesta:
+*  [["Alexis Ajinca","Hamed Haddadi"],["Alexis Ajinca","Roy Hibbert"],["LaMarcus Aldridge","Zydrunas Ilgauskas"] ...
