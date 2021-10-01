@@ -5,26 +5,65 @@ const table = document.getElementById('table');
 const tbody = document.getElementById('body-table');
 const message = document.getElementById('message');
 
-enterButton.addEventListener('click', (event) => {
-  //Implementar lógica del button submit
-  alert('Implementar lógica del button submit');
-  getresults(123);
-  event.preventDefault();
+enterButton.addEventListener('click', async (e) => {
+    e.preventDefault(); // disable the refresh on the page when submit
+    const value = document.getElementById('inputText').value;
+
+    getresults(value).then( data =>  render(data));
+  console.log(data);
+
+
+
 });
+
+const DOMAIN = 'localhost';
+const PORT = 3000;
+const ENDPOINT = '/api';
+const BASE_PATH = DOMAIN + ":" + PORT;
 
 /**
  * Llamado al backend con queryParam
  * @param {*} heightRef
  */
 async function getresults(heightRef) {
-  const resp = await fetch(`api?input=${heightRef}`);
-  const data = await resp.json();
-  console.log('data from back', data);
-  //printValues(data);
+    const resp = await fetch(`api/${heightRef}`);
+  return await resp.json();
+    //printValues(data);
 }
 
 function removeAllChildNodes(parent) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
+
+function render(data) {
+  const tBody = document.getElementById('body-table');
+
+  for (const i in data) {
+
+
+
+    const row = document.createElement('row');
+    row.innerHTML = `
+
+        <tr>
+
+        
+     <td> ${data[i][0]} </td>
+     <td> ${data[i][1]} </td>
+
+
+        </tr>
+
+`
+    tBody.appendChild(row);
+
+  }
+
+}
+
+
+
+
+
