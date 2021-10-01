@@ -19,3 +19,18 @@
 ## Documentación endpoint
 
 Agregue aquí al documentación del endpoint elaborado.
+
+* Url
+
+http://localhost:3000/api/
+
+* Datos de entrada
+
+http://localhost:3000/api/<numero>
+   
+*Ejmplo
+   
+Petición: http://localhost:3000/api/170
+   
+Respuesta:
+ [["Alexis Ajinca","Hamed Haddadi"],["Alexis Ajinca","Roy Hibbert"],["LaMarcus Aldridge","Zydrunas Ilgauskas"] ...
