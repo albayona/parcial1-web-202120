@@ -8,6 +8,9 @@ const message = document.getElementById('message');
 enterButton.addEventListener('click', async (e) => {
     e.preventDefault(); // disable the refresh on the page when submit
     const value = document.getElementById('inputText').value;
+    const tBody = document.getElementById('body-table');
+
+    removeAllChildNodes(tBody);
 
     getresults(value).then( (data) =>  {render(data)});
 
@@ -41,19 +44,18 @@ function render(data) {
 
 
 
-    const row = document.createElement('row');
-    row.innerHTML = `
+    const row = document.createElement('tr');
+    const col1 = document.createElement('td');
+    const col2 = document.createElement('td');
+    const col3 = document.createElement('td');
+    col1.append(`${i}`);
+    col2.append(`${data[i][0]}`);
+    col3.append(`${data[i][1]}`);
 
-        <tr>
+    row.append(col1);
+    row.append(col2);
+    row.append(col3);
 
-        
-     <td> ${data[i][0]} </td>
-     <td> ${data[i][1]} </td>
-
-
-        </tr>
-
-`
     tBody.appendChild(row);
 
   }
