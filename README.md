@@ -26,7 +26,7 @@ Agregue aquí al documentación del endpoint elaborado.
 
 2. Datos de entrada
 
-* http://localhost:3000/api/<numero>
+* http://localhost:3000/api/{numero}
    
 3. Ejemplo
    
