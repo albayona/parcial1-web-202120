@@ -25,7 +25,14 @@ const getPairsOfPlayers = async (req = request, resp = response, next) => {
     }
   }
 
-  return resp.json(selectedPlayers);
+  let res = resp.json(selectedPlayers);
+
+  if (selectedPlayers.length === 0){
+
+    res = resp.json("No matches found");
+  }
+
+  return res;
 };
 
 
