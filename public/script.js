@@ -9,10 +9,7 @@ enterButton.addEventListener('click', async (e) => {
     e.preventDefault(); // disable the refresh on the page when submit
     const value = document.getElementById('inputText').value;
 
-    getresults(value).then( data =>  render(data));
-  console.log(data);
-
-
+    getresults(value).then( (data) =>  {render(data)});
 
 });
 
@@ -27,8 +24,8 @@ const BASE_PATH = DOMAIN + ":" + PORT;
  */
 async function getresults(heightRef) {
     const resp = await fetch(`api/${heightRef}`);
-  return await resp.json();
-    //printValues(data);
+  console.log(resp.json);
+  return  resp.json();
 }
 
 function removeAllChildNodes(parent) {
